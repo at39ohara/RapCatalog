@@ -62,8 +62,10 @@ public class Start {
                         String trapArtist = scanner.nextLine();
                         System.out.print("このTrapの説明文を入力してください： ");
                         String trapDescription = scanner.nextLine();
+                        System.out.print("このTrapのBPMを入力してください：");
+                        int trapBPM = scanner.nextInt();
                         // addSongにnewしてコンストラクタの値をぶっこむ
-                        catalog.addSong(new TrapSong(trapTitle, trapArtist, trapDescription));
+                        catalog.addSong(new TrapSong(trapTitle, trapArtist, trapDescription, trapBPM));
                         System.out.println();
                         System.out.println("正常に曲が追加されました。");
                         break;
@@ -77,8 +79,10 @@ public class Start {
                         String drillArtist = scanner.nextLine();
                         System.out.print("このDrillの説明文を入力してください：");
                         String drillDescription = scanner.nextLine();
+                        System.out.print("このDrillの派生を入力してください：");
+                        String drillDerivation = scanner.nextLine();
                         // addSongにnewしてコンストラクタの値をぶっこむ
-                        catalog.addSong(new DrillSong(drillTitle, drillArtist, drillDescription));
+                        catalog.addSong(new DrillSong(drillTitle, drillArtist, drillDescription, drillDerivation));
                         System.out.println();
                         System.out.println("正常に曲が追加されました。");
                         break;

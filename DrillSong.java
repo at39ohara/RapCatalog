@@ -1,40 +1,22 @@
 // Drillの機能を実装するクラス
 // 曲のタイトル、アーティスト名、説明文を取得するメソッドをオーバーライドさせる
 // 曲の情報を表示するメソッドをオーバーライドさせる
-public class DrillSong implements Song {
+public class DrillSong extends RapSong {
 
     // 文字列型の変数を定義して受け皿を作る
-    private String title;
-    private String artist;
-    private String description;
+    private String derivation;
 
     // コンストラクタを定義して初期化をする
     // 必要な引数はタイトル、アーティスト名、説明文
-    public DrillSong(String title, String artist, String description) {
-        this.title = title;
-        this.artist = artist;
-        this.description = description;
+    public DrillSong(String title, String artist, String description, String derivation) {
+        super(title, artist, description);
+        this.derivation = derivation;
     }
 
-    // タイトルを取得し返すメソッドをオーバーライドさせる
-    // このクラスの中だとDrillのタイトルを返すことになる
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    // アーティスト名を取得し返すメソッドをオーバーライドさせる
-    // このクラスの中だとDrillのアーティスト名を返すことになる
-    @Override
-    public String getArtist() {
-        return artist;
-    }
-
-    // 説明文を取得し返すメソッドをオーバーライドさせる
-    // このクラスの中だとDrillの説明文を返すことになる
-    @Override
-    public String getDescription() {
-        return description;
+    // RapSongクラスを継承して
+    // Drillの派生を入力するDrillクラス独自の項目を追加する
+    public String getDerivation() {
+        return derivation;
     }
 
     // 曲の情報を表示するインターフェースをオーバーライド？（日本語合ってんのか？これ。。。。）
@@ -42,6 +24,6 @@ public class DrillSong implements Song {
     // 曲の検索をかけてヒットした時に呼び出す
     @Override
     public void displayInfo() {
-        System.out.println("Drillのタイトル： " + title + ", アーティスト名：" + artist + ", 説明文： " + description);
+        System.out.println("Drillのタイトル： " + getTitle() + ", アーティスト名：" + getArtist() + ", 説明文： " + getDescription() + ", 派生： " + getDerivation());
     }
 }

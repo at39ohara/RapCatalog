@@ -41,6 +41,6 @@ public class RapSong implements Song {
     // タイトル、アーティスト名、説明文を表示する
     @Override
     public void displayInfo() {
-        System.out.println("その他のラップのタイトル： " + title + ", アーティスト名： " + artist + ", 説明文： " + description);
+        System.out.println("その他のラップのタイトル： " + getTitle() + ", アーティスト名： " + getArtist() + ", 説明文： " + getDescription());
     }
 }
